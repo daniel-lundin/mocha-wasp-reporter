@@ -2,8 +2,9 @@
  * Module dependencies.
  */
 
-var Base = require('./base');
-var inherits = require('../utils').inherits;
+const mocha = require('mocha');
+const inherits = mocha.utils.inherits;
+const Base = mocha.reporters.Base;
 
 exports = module.exports = Wasp;
 
@@ -95,14 +96,14 @@ Wasp.prototype.cursorUp = function(n) {
 };
 
 Wasp.prototype.generateColors = function() {
-  var colors = [];
+  const colors = [];
 
-  for (var i = 0; i < (6 * 7); i++) {
-    var pi3 = Math.floor(Math.PI / 3);
-    var n = (i * (1.0 / 6));
-    var r = Math.floor(3 * Math.sin(n) + 3);
-    var g = Math.floor(3 * Math.sin(n + 2 * pi3) + 3);
-    var b = Math.floor(3 * Math.sin(n + 4 * pi3) + 3);
+  for (let i = 0; i < (6 * 7); i++) {
+    const pi3 = Math.floor(Math.PI / 3);
+    const n = (i * (1.0 / 6));
+    const r = Math.floor(3 * Math.sin(n) + 3);
+    const g = Math.floor(3 * Math.sin(n + 2 * pi3) + 3);
+    const b = Math.floor(3 * Math.sin(n + 4 * pi3) + 3);
     colors.push(36 * r + 6 * g + b + 16);
   }
 
